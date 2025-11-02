@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Interactive Computer Science Quiz">
+    <meta name="keywords"
+        content=" quiz, online quiz, computer science, learn, interactive, fun, cs quiz, computer science quiz, challenging, multiple choice,">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+     <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    
+    <title>CS Edition Quiz App with API</title>
+</head>
+
+<!-- START Of QUIZ -->
+<body>
+    <header>
+        <h1 class="heading text-center mt-4">
+            <div> <span> CS </span> Edition Quiz </div>
+        </h1>
+    </header>
+    <div class="home-container mt-4" id="home-container">
+        <div class="text-center mb-4">
+
+            <div>
+                <h2 class="welcome">Welcome to the CS Edition Interactive Quiz!</h2>
+                <p class="lead">Test your knowledge of computer science with this interactive quiz.</p>
+            </div>
+        </div>
+
+        <!-- User name input area -->
+         <div class="username mb-3 text-center d-flex flex-column align-items-center">
+            <label for="username-input" class="form-label">Enter your name to begin:</label>
+            <input type="text" id="username-input" class="form-control" placeholder="Enter Your Name" maxlength="8"
+                aria-label="username-input" required>
+            <!-- Error Message for Username Validation -->
+            <div id="error" class="error-msg" aria-live="assertive"></div>
+        </div>
+
+        <!-- Proceed to Greeting Box -->
+        <div class="d-flex justify-content-center">
+            <button id="startQuiz-btn" type="button" class="startQuiz-btn mb-4">Start Quiz</button>
+        </div>
+    </div>
+
+    <!-- Greeting Box Section-->
+    <section class="greeting" id ="greeting-box">
+        <h2 class="display-6 mt-4 text-center d-flex align-items-center justify-content-center">Hello, 
+            <span><i class="fa-regular fa-hand wave" aria-hidden="true"></i></span> 
+            <span class="player-name"></span>!
+        </h2>
+        <p class="lead text-center mx-4">Get ready to test your knowledge! Click the button below to see the quiz rules.</p>
+        <div class="greetingBox-btn-container d-flex justify-content-center mb-4">
+                 <button id="quizRules-Btn" data-type="quiz-rules" class="quizRules-Btn">Quiz Rules</button>
+        </div>
+    </section>
+
+    <!-- Quiz Rule Box Section-->
+    <section class="rule-box" id="rule-box">
+            <h3 class="quiz-rule text-center mt-3"> Quiz Rules</h3>
+            <div class="instructions mb-4">
+                <div class="rule">1. The game consists of mixed levels of difficulty.
+                </div>
+                <div class="rule">2. The questions are mixed of topics from computer science.</div>
+                <div class="rule">3. There are <span class="total-question">5</span> questions.</div>
+                <div class="rule">4. You have <span>20</span> seconds per question.</div>
+                <div class="rule">5. You can not select any option once the timer ends.</div>
+                <div class="rule">6. You'll get points on every correct answer.</div>
+                <div class="rule">7. Click Next Question to move on to the next question.</div>
+            </div>
+
+            <!-- Quiz Rule Box Buttons-->
+            <div class="ruleBox-btn-container d-flex justify-content-center py-3">
+                <button data-type="next" class="next-Btn" id="next-Btn">Next</button>
+                <button data-type="home" class="home-btn" id="back-home-btn">Home</button>
+            </div>
+    </section>
+
+    <!-- Questions Section Area, Questions display with timer progress and the user score-->
+    <section>
+        <div class="quiz-box" id="quiz-box">
+            <div class="quiz-box-header mt-3 d-flex justify-content-evenly">
+                <div class="timer">
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                        <span class="progress-text">20</span>
+                    </div>
+                    <div id="time-counter" class="time-counter"></div>
+                </div>
+                <div class="score">Score :
+                    <span id="score">0</span>
+                </div>
+            </div>
+            <div class="quiz-box-body d-flex flex-column justify-content-center mt-4">
+                <div class="questions-counter-container" id="questions-counter-container">
+                    <div class="questions-counter text-center">
+                        Question <span id="questions-counter">1</span> of 5
+                    </div>
+                </div>
+                <div class="question-text text-center mt-3" id="question-text"></div>
+                <ul class="quiz-options mt-3" id="quiz-options" aria-label="Anwser Option Button"></ul>
+            </div>
+            <div class="next-question-container text-align-center d-grid grid-column justify-content-center mb-4">
+                <div class="quiz-end mb-2"></div>
+                <button data-type="continue" class="next-question-btn mb-4" id="next-question-btn">Next Question
+                </button>
+            </div>
+        
+        </div>
+    </section>
+
+    <!-- Quiz Result Box Section-->
+    <section class="quiz-result" id="quiz-result">
+        <div class="quiz-result-body text-center mt-4">
+            
+            <h4 class="quiz-result-header mt-4 mb-3">Quiz Result</h4>
+            <div class="result-text" id="result-text"></div>
+            <div id="reset-quiz" class="reset-quiz">
+                <button type="button" class="restart-btn mb-4" id="restart-btn" aria-label="Restart Quiz">Play Again</button>
+            </div>
+        </div>
+    </section>
+
+     <footer>
+        <div class="footer-brand"> CS Edition Quiz By Rashidat Adekoya.</div>
+        <p class="site-use">
+            © <span id="current-year" class="me-1"></span> 
+            Copyrights All Rights Reserved. 
+        </p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous">
+    </script>
+    
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/2d736759eb.js" crossorigin="anonymous"></script>
+    
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
