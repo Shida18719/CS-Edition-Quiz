@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap&family=Rancho&effect=shadow-multiple|3d-float');
+
+/* --------- Global style */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #595959;
+    background-image: linear-gradient(240deg, #661190, #8126cb 10%, #123089, #4f84d8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --------- Heading */
+
+header {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+header span {
+    font-family: 'font-effect-anaglyph';
+    color: #661190;
+    font-weight: 800;
+    font-size: 3rem;
+    text-shadow: 3px 3px 0px #fafafa;
+}
+
+/* --------- Start Quiz Container */
+
+.home-container {
+    background-color: #fafafa;
+    border-radius: 5px;
+    width: 70vw;
+    margin: 5vh auto;
+    max-width: 70%;
+    /* display: none; */
+    box-shadow:  2px 5px 8px rgba(0, 0, 0, 0.35);
+}
+
+.home-container h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #661190;
+    padding-top: 2rem;
+    margin: 2rem;
+}
+
+.lead{
+    margin: 2rem;
+    font-size: 1.6rem;
+    
+}
+
+/* Utility class used by JS to toggle #home-container visibility */
+.hide {
+    display: none !important;
+}
+
+label {
+    font-size: 1.2rem;
+}    
+
+input[type ="text"] {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 8px;
+    margin: 0.8rem 0 1rem 0;
+    border: 1px solid #661190;
+    text-align: center;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+input[type = "text"]:hover, 
+input[type = "text"]:focus {
+    background: rgba(74, 8, 215, 0.168);
+    border: none;
+}
+
+input[type="text"].invalid {
+    border-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.05);
+}
+
+input[type="text"].valid {
+    border-color: #28a745;
+    background-color: rgba(40, 167, 69, 0.05);
+}
+
+.startQuiz-btn,
+.home-btn,
+.restart-btn {
+    width: 9rem;
+    height: 3rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: #4f84d8;
+    margin: 0.5rem;
+    color: #000;
+    border: none;
+    outline: none;
+    cursor: pointer;  
+}
+
+.startQuiz-btn:hover,
+.home-btn:hover, 
+.restart-btn:hover {
+    transform: scale(1.1);
+    transition: transform 250ms;
+    box-shadow: 0 3px 15px rgba(111, 12, 116, 0.833);
+}
+
+/* -------------- Greeting Box*/
+ /* --------------------------- */
+.greeting {
+    max-width: 60%;
+    background-color:#FAFAFA;
+    border-radius: 10px;
+    width: 60vw;   
+    margin: 4rem auto;
+    display: none;
+    overflow: auto;
+    overflow-x: hidden;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.35); 
+}
+
+.greeting .wave {
+    animation-duration: 2.5s;
+    animation-name: wave;
+    transform-origin: 70% 70%; 
+    font-size: 2.5rem;
+    color: rgb(69, 64, 35);
+    rotate: 20deg;
+  
+    transition: width 2s, height 2s, transform 2s;
+}
+
+.greeting .wave:hover {
+    animation: wave 2.5s infinite;
+    transform: rotate(40deg);
+}
+
+.greeting .lead {
+    font-size: 1.4rem;
+}
+
+
+.player-name {
+    color: #661190;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-left: 0.3rem;
+}
+
+
+/* -------------- Quiz Rule Box*/
+ /* --------------------------- */
+ .rule-box {
+    max-width: 70%;
+    background-color:#FAFAFA;
+    border-radius: 10px;
+    width: 70vw;   
+    margin: 4rem auto;
+    display: none;
+    overflow: auto;
+    overflow-x: hidden;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.35); 
+}
+
+.quiz-rule {
+    height: 3rem;
+    padding-top: 0.5em;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #8126cb;
+    margin-bottom: 0.5rem;
+}
+
+.instructions {
+    margin: 0 1.5rem;
+    text-align: left;
+}
+
+.instructions .rule {
+    margin: 0.3rem 0;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+}
+
+.rule-box .rule span {
+    font-weight: 600;
+    color: #050505;
+}
+
+.ruleBox-btn-container {
+    border-top: 2px solid #595959;
+    color: #FAFAFA;
+}
+
+.quizRules-Btn,
+.next-Btn {
+    width: 8rem;
+    font-size: 1.2rem;
+    height: 3rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: #ffffff;
+    margin: 0.5rem;
+    background-color: #661190;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.quizRules-Btn:hover,
+.next-Btn:hover {
+    transform: scale(1.1);
+    transition: transform 250ms;
+    box-shadow: 0 3px 15px rgba(62, 83, 240, 0.833);
+}
+
+/* -------------------------*/
+/* -------------- Quiz Box*/
+ .quiz-box {
+    max-width: 80%;
+    background-color:#FAFAFA;
+    border-radius: 10px;
+    width: 70vw;   
+    margin: 5vh auto;
+    display: none;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.35);
+}
+
+.quiz-box-header {
+    border-bottom: 2px solid #595959;
+}
+
+.timer {
+    width: 30%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.2rem;
+}
+
+.timer .progress {
+    position: relative;
+    width: 100%;
+    height: 1rem;
+    overflow: hidden;
+    border-radius: 3rem;
+    background-color:transparent; 
+    border: 2px solid #123089;
+}
+
+.timer .progress .progress-bar {
+    height: 100%;
+    width: 100%;
+    border-radius: 3rem;
+    overflow: hidden;
+    background:linear-gradient(to right, #8126cb, #4f84d8);
+    transition: 1s linear;
+}
+
+.timer .progress .progress-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.score {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 1.5rem;
+}
+
+.score span {
+    color: #661190;
+    font-weight: 600;
+}
+
+.questions-counter {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1rem 2rem;
+}
+
+.question-text {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 1rem 1.2rem;
+    color: #595959;
+}
+
+.quiz-options {
+    list-style-type:none;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
+    
+}
+
+.quiz-options li {
+    margin: 0.5rem 1.5rem;
+    padding: 0.5rem 0.5rem;
+    border: 1px solid #661190;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    transition: background-color 250ms;
+}
+
+.quiz-options li:hover {
+    border-color: #659f2f;
+}
+
+.quiz-options li.correct {
+    background-color: #d4edda;
+    color: #659f2f;
+    border-color: #659f2f;
+}
+
+.quiz-options li.incorrect {
+    background-color: #f8d7da;
+    color: #a94442;
+    border-color: #a94442;
+}
+
+.next-question-btn {
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 9rem;
+    height: 3rem;
+    border-radius: 5px;
+    border: none;
+    color: #000000;
+    background-color: #4f84d8;
+    cursor: pointer;
+    margin: 0.5rem;
+    outline: none;
+}
+
+.next-question-btn:hover {
+    transform: scale(1.1);
+    transition: transform 250ms;
+    box-shadow: 0 3px 15px rgba(111, 12, 116, 0.833);
+}
+
+.quiz-end {
+    margin-left: 1.5rem;
+    font-size: 1.1rem;
+    color: #595959;
+}
+
+/* -------------- Quiz Result Box*/
+.quiz-result {
+    max-width: 70%;
+    background-color:#FAFAFA;
+    border-radius: 10px;
+    width: 60vw;   
+    margin: 5rem auto;
+    display: none;
+    overflow: auto;
+    overflow-x: hidden;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.35); 
+}
+
+.result-text {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 1rem 1.5rem;
+    color: #595959;
+}
+
+footer .footer-brand {
+    color: #fafafa;
+}
+
+.site-use {
+    font-size: 0.8rem;
+    color: #fafafa;
+    margin-top: 0.8rem;
+}
+
+/**************** Media Query  **************/
+@media only screen and (min-width : 320px) {
+    .score {
+        margin: 1rem;
+    }
+
+    .quiz-box {
+        max-width: 90%;
+        width: 90vw;
+    }
+
+    .quiz-options li {
+        margin: 0.5rem 1.5rem;
+        padding: 0.5rem 0.2rem;
+        font-size: 1.2rem;
+        height: 4rem;
+}
+
+}
+
+@media only screen and (min-width : 768px) {
+    .lead{
+        font-size: 2rem;
+    
+    }
+
+}
