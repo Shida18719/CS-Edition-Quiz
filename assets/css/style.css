@@ -35,7 +35,7 @@ header span {
     color: #661190;
     font-weight: 800;
     font-size: 3rem;
-    text-shadow: 3px 3px 0px #fafafa;
+    text-shadow: 3px 3px 0px #fafafa, 5px 3px 0px #4cc9f0;
 }
 
 /* --------- Start Quiz Container */
@@ -394,12 +394,12 @@ input[type="text"].valid {
 }
 
 footer .footer-brand {
-    color: #fafafa;
+    color: #4cc9f0;
 }
 
 .site-use {
     font-size: 0.8rem;
-    color: #fafafa;
+    color: #4cc9f0;
     margin-top: 0.8rem;
 }
 
