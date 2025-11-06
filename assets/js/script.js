@@ -203,7 +203,7 @@ function checkAnswer(answerOption, answers, correctAnswer) {
 nextQuestionBtn.addEventListener('click', () => {
     clearInterval(counter);
     
-    if (nextQuestionBtn.innerText == "Next Question") {
+    if (nextQuestionBtn.innerText == "Next question") {
         questionIndex++;
         displayQuestions(questionArr[questionIndex]);
     } else {
@@ -211,7 +211,7 @@ nextQuestionBtn.addEventListener('click', () => {
     }
     
     if (questionIndex === questionArr.length - 1) {
-        quizEnd.innerHTML = "End of Quiz.";
+        quizEnd.innerHTML = "End of quiz.";
         nextQuestionBtn.innerText = "Submit";
     }
 });
