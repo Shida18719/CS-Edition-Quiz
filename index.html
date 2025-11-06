@@ -36,7 +36,7 @@
         <!-- User name input area -->
          <div class="username mb-3 text-center d-flex flex-column align-items-center">
             <label for="username-input" class="form-label">Enter your name to begin:</label>
-            <input type="text" id="username-input" class="form-control" placeholder="Enter Your Name" maxlength="8"
+            <input type="text" id="username-input" class="form-control" placeholder="Enter your name" maxlength="8"
                 aria-label="username-input" required>
             <!-- Error Message for Username Validation -->
             <div id="error" class="error-msg" aria-live="assertive"></div>
@@ -44,7 +44,7 @@
 
         <!-- Proceed to Greeting Box -->
         <div class="d-flex justify-content-center">
-            <button id="startQuiz-btn" type="button" class="startQuiz-btn mb-4">Start Quiz</button>
+            <button id="startQuiz-btn" type="button" class="startQuiz-btn mb-4">Start quiz</button>
         </div>
     </div>
 
@@ -56,7 +56,7 @@
         </h2>
         <p class="lead text-center mx-4">Get ready to test your knowledge! Click the button below to see the quiz rules.</p>
         <div class="greetingBox-btn-container d-flex justify-content-center mb-4">
-                 <button id="quizRules-Btn" data-type="quiz-rules" class="quizRules-Btn">Quiz Rules</button>
+                 <button id="quizRules-Btn" data-type="quiz-rules" class="quizRules-Btn">Quiz rules</button>
         </div>
     </section>
 
@@ -71,7 +71,7 @@
                 <div class="rule">4. You have <span>20</span> seconds per question.</div>
                 <div class="rule">5. You can not select any option once the timer ends.</div>
                 <div class="rule">6. You'll get points on every correct answer.</div>
-                <div class="rule">7. Click Next Question to move on to the next question.</div>
+                <div class="rule">7. Click "Next question" to move on to the "Next question".</div>
             </div>
 
             <!-- Quiz Rule Box Buttons-->
@@ -103,11 +103,11 @@
                     </div>
                 </div>
                 <div class="question-text text-center mt-3" id="question-text"></div>
-                <ul class="quiz-options mt-3" id="quiz-options" aria-label="Anwser Option Button"></ul>
+                <ul class="quiz-options mt-3" id="quiz-options" aria-label="Anwser option button"></ul>
             </div>
             <div class="next-question-container text-align-center d-grid grid-column justify-content-center mb-4">
                 <div class="quiz-end mb-2"></div>
-                <button data-type="continue" class="next-question-btn mb-4" id="next-question-btn">Next Question
+                <button data-type="continue" class="next-question-btn mb-4" id="next-question-btn">Next question
                 </button>
             </div>
         
@@ -121,7 +121,7 @@
             <h4 class="quiz-result-header mt-4 mb-3">Quiz Result</h4>
             <div class="result-text" id="result-text"></div>
             <div id="reset-quiz" class="reset-quiz">
-                <button type="button" class="restart-btn mb-4" id="restart-btn" aria-label="Restart Quiz">Play Again</button>
+                <button type="button" class="restart-btn mb-4" id="restart-btn" aria-label="Restart Quiz">Play again</button>
             </div>
         </div>
     </section>
